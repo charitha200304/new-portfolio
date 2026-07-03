@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { Menu, X } from "lucide-react";
@@ -15,6 +15,26 @@ const LINKS = [
 export default function Nav() {
   const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hideNav, setHideNav] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isMobile = window.innerWidth < 640; // Tailwind sm breakpoint
+      if (isMobile) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+          setHideNav(true);
+        } else if (currentScrollY < lastScrollY.current) {
+          setHideNav(false);
+        }
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     const sections = LINKS.map((l) => document.getElementById(l.id)).filter(
       Boolean
@@ -43,7 +63,7 @@ export default function Nav() {
 
   return (
     <>
-      <header className="sticky top-4 z-50 mx-auto mb-10 max-w-6xl px-4 sm:px-6 lg:px-8">
+      <header className={`sticky top-0 z-50 mx-auto mb-10 max-w-6xl px-4 sm:px-6 lg:px-8 transition-transform duration-300 ${hideNav ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="flex items-center justify-between rounded-2xl border border-zinc-800 bg-zinc-950/80 px-4 py-3 backdrop-blur-xl sm:px-6">
           <a
             href="#home"
