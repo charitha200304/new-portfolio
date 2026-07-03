@@ -1,0 +1,17 @@
+{
+  "name": "Charitha Chiranjeewa | Full-Stack Developer",
+  "short_name": "Charitha",
+  "description": "Full-Stack Developer specializing in Spring Boot, NestJS, React, and React Native.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
