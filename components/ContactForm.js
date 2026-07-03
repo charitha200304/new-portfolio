@@ -134,6 +134,8 @@ export default function ContactForm() {
       setForm({ name: "", email: "", message: "" });
       setTouched({ name: false, email: false, message: false });
       setErrors({ name: "", email: "", message: "" });
+      // Reset status back to idle after a short delay so the form can be reused
+      setTimeout(() => setStatus("idle"), 3000);
     } catch (err) {
       setStatus("error");
       setServerError(err.message || "Something went wrong. Please try again.");
@@ -210,7 +212,7 @@ export default function ContactForm() {
           >
             <input
               id="name" name="name" type="text"
-              placeholder="Charitha Chiranjeewa"
+              placeholder="Your Name"
               value={form.name}
               onChange={handleChange}
               onBlur={handleBlur}
