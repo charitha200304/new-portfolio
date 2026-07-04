@@ -86,7 +86,7 @@ export default function Hero() {
             <Github className="h-4 w-4" />
           </a>
           <a
-            href="https://linkedin.com/in/charitha-chiranjeewa"
+            href="https://www.linkedin.com/in/charitha-chiranjeewa-897526381/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"

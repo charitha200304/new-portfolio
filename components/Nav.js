@@ -35,25 +35,7 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const sections = LINKS.map((l) => document.getElementById(l.id)).filter(
-      Boolean
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
+  // Remove IntersectionObserver for active state; rely on click handling
 
   function handleClick(e, id) {
     e.preventDefault();
@@ -115,6 +97,7 @@ export default function Nav() {
         {link.label}
       </a>
     ))}
+    
   </div>
 )}
     </>
