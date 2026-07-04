@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 flex flex-wrap items-center gap-3"
+          className="mt-8 flex flex-col sm:flex-row items-center gap-3"
         >
           <a
             href="#contact"
@@ -71,7 +71,7 @@ export default function Hero() {
               e.preventDefault();
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="group inline-flex items-center gap-2 rounded-xl bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-950 transition-transform duration-200 hover:scale-[1.03]"
+            className="group inline-flex items-center gap-2 rounded-xl bg-zinc-100 w-full sm:w-auto mb-2 sm:mb-0 px-5 py-2.5 text-sm font-medium text-zinc-950 transition-transform duration-200 hover:scale-[1.03]"
           >
             Get in touch
             <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -79,7 +79,7 @@ export default function Hero() {
           <a
             href="/resume.pdf"
             download="Charitha_Resume.pdf"
-            className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 px-5 py-2.5 text-sm font-medium text-white transition-transform duration-200 hover:scale-[1.03]"
+            className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 w-full sm:w-auto mb-2 sm:mb-0 px-5 py-2.5 text-sm font-medium text-white transition-transform duration-200 hover:scale-[1.03]"
           >
             Download Resume
           </a>
@@ -88,7 +88,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="inline-flex items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/60 p-2.5 text-zinc-400 transition-colors hover:border-zinc-700 hover:text-zinc-100"
+            className="inline-flex items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/60 w-full sm:w-auto mb-2 sm:mb-0 p-2.5 text-zinc-400 transition-colors hover:border-zinc-700 hover:text-zinc-100"
           >
             <Github className="h-4 w-4" />
           </a>
@@ -97,7 +97,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="inline-flex items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/60 p-2.5 text-zinc-400 transition-colors hover:border-zinc-700 hover:text-zinc-100"
+            className="inline-flex items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/60 w-full sm:w-auto mb-2 sm:mb-0 p-2.5 text-zinc-400 transition-colors hover:border-zinc-700 hover:text-zinc-100"
           >
             <Linkedin className="h-4 w-4" />
           </a>
