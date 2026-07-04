@@ -77,7 +77,7 @@ export default function Hero() {
             <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
-            href="/resume.pdf"
+            href="/api/download-resume"
             download="Charitha_Resume.pdf"
             className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 hover:brightness-110 shadow-sm w-full sm:w-auto sm:flex-1 mb-2 sm:mb-0 px-4 py-2 text-base font-medium text-white transition-transform duration-200 hover:scale-105"
           >
